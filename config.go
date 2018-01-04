@@ -7,9 +7,10 @@ import (
 
 type Config struct {
 	Main struct {
-		Key string
-		Host string
-		Port int
+		Key    string
+		Host   string
+		Port   int
+		CmdDir string
 	}
 }
 
