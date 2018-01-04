@@ -8,6 +8,8 @@ import (
 type Config struct {
 	Main struct {
 		Key string
+		Host string
+		Port int
 	}
 }
 
