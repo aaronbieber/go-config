@@ -13,8 +13,8 @@ type Config struct {
 
 var cfg Config
 
-func init() {
-	err := gcfg.ReadFileInto(&cfg, "config.gcfg")
+func loadConfig(loadPath string) {
+	err := gcfg.ReadFileInto(&cfg, loadPath)
 
 	if err != nil {
 		log.Fatal(err)
@@ -23,5 +23,11 @@ func init() {
 }
 
 func Conf() Config {
+	loadConfig("config.gcfg")
+	return cfg
+}
+
+func ConfFrom(loadPath string) Config {
+	loadConfig(loadPath)
 	return cfg
 }
